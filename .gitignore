@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.pytest_cache/
+.ruff_cache/
+.env
+
+# Downloaded corpus and embedding caches are rebuilt with `arxiv-rag ingest`.
+data/corpus/
+data/index/
+# The labeled eval set IS committed: data/eval/questions.jsonl
+data/eval/questions_template.jsonl
+
+# Personal planning notes, not part of the project.
+docs/ROADMAP.zh.md
