@@ -1,7 +1,8 @@
 # arXiv Research Assistant
 
-A retrieval-augmented question-answering system over recent arXiv papers, built to be
-**measured**: every retrieval and generation choice is compared on a hand-labeled evaluation set.
+A retrieval-augmented question-answering system over recent arXiv papers, built around
+**measurement**: an evaluation harness scores each retriever on a labeled question set with
+Recall@k and MRR, so retrieval choices are compared rather than judged by eye.
 
 - **Ingestion** from the public arXiv API (rate-limited, deduplicated, resumable)
 - **Retrieval**: BM25, dense embeddings (BGE), and hybrid reciprocal rank fusion
@@ -28,13 +29,12 @@ flowchart LR
 
 ## Results
 
-> Placeholder: run `arxiv-rag eval` on your labeled set and paste `results/retrieval_eval.md` here.
+`arxiv-rag eval` scores every retriever on the same labeled question set and reports Recall@1/5/10
+and MRR, so BM25, dense and hybrid are compared on identical ground.
 
-| retriever | recall@1 | recall@5 | recall@10 | mrr |
-|---|---|---|---|---|
-| bm25 | – | – | – | – |
-| dense | – | – | – | – |
-| hybrid | – | – | – | – |
+Numbers are not published yet: the labeled question set is still being written, and figures
+produced from the unlabeled template would not measure anything. The table lands with the first
+full evaluation run — see the Roadmap below.
 
 ## Quickstart
 
